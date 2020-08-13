@@ -1,8 +1,88 @@
 .task {
   padding: 7px;
-  margin: 6px 0;
+  margin: 7px;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
   cursor: pointer;
+}
+
+.taskButton {
+  margin: 5px;
+  padding: 10px;
+  color: #172b4d;
+  background-color: #c0baba;
+  min-height: 38px;
+  max-height: 38px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskButton:hover {
+  background-color: #aca6a6;
+}
+
+.taskCreator {
+  padding: 8px;
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  white-space: normal;
+  border-radius: 3px;
+  position: relative;
+  text-decoration: none;
+}
+
+.taskName {
+  padding: 5px;
+  width: 100%;
+  height: 60px;
+  color: #172b4d;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: none;
+}
+
+.taskCreator_add {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  height: 32px;
+  overflow: hidden;
+  margin: 4px 0 0;
+
+  .taskCreator_add_submit {
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    min-height: 32px;
+    height: 32px;
+    margin: 0 4px 0 0;
+    padding: 4px 25px;
+    background-color: #5aac44;
+    box-shadow: none;
+    border: none;
+    color: #fff;
+  }
+
+  .taskCreator_add_cancel {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 22px;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

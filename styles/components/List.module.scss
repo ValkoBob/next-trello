@@ -1,35 +1,122 @@
 .list {
   width: 300px;
+  height: 100%;
   margin: 0 8px 4px 8px;
   background-color: lightgrey;
   border-radius: 5px;
   box-sizing: border-box;
   vertical-align: top;
-  height: 80vh;
 
   .listHeader {
     padding: 10px 5px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .listTitle {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .taskContainer {
-    padding: 5px;
+    max-height: 65vh;
     margin: 0 8px 4px 8px;
     background-color: #aca6a6;
-    height: 72vh;
     border-radius: 5px;
     overflow-y: auto;
   }
 }
 
 .listCreator {
-  padding: 14px;
   width: 300px;
-  height: 50px;
+  height: fit-content;
   margin: 0 8px 4px 8px;
   background-color: #d7d6d6;
   border-radius: 5px;
-  cursor: pointer;
   box-sizing: border-box;
   vertical-align: top;
+  color: #172b4d;
+  white-space: nowrap;
+
+  .listCreator_activate {
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .listCreator_activate:hover {
+    background-color: #aca6a6;
+  }
+
+  .listCreator_inputText {
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 400;
+    color: #172b4d;
+    box-sizing: border-box;
+    border-radius: 3px;
+    line-height: 20px;
+    padding: 8px 12px;
+    background: #fff;
+    border: none;
+    box-shadow: inset 0 0 0 2px #0079bf;
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .listCreator_add {
+    color: #172b4d;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+    height: 32px;
+    overflow: hidden;
+    margin: 4px 0 0;
+
+    .listCreator_add_submit {
+      border-radius: 3px;
+      cursor: pointer;
+      text-align: center;
+      min-height: 32px;
+      height: 32px;
+      margin: 0 4px 0 0;
+      padding: 4px 25px;
+      background-color: #5aac44;
+      box-shadow: none;
+      border: none;
+      color: #fff;
+    }
+
+    .listCreator_add_cancel {
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 22px;
+    }
+  }
+}
+
+.listDeleter {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.listDeleter:hover {
+  background-color: #cd1238;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

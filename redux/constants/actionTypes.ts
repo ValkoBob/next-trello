@@ -1,0 +1,9 @@
+export enum actionTypes {
+  ADD_LIST = 'ADD_LIST',
+  DELETE_LIST = 'DELETE_LIST',
+  MOVE_LIST = 'MOVE_LIST',
+
+  ADD_TASK = 'ADD_TASK',
+  DELETE_TASK = 'DELETE_TASK',
+  MOVE_TASK = 'MOVE_TASK',
+}

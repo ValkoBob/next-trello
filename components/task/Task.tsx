@@ -1,14 +1,17 @@
-import * as React from "react";
+import React from "react";
 import taskStyles from '../../styles/components/Task.module.scss';
 
 interface TaskTypes {
-    title: string
+    title: string,
+    id: number,
+    onDragStart: any
 }
 
 const Task: React.FC<TaskTypes> = (props): JSX.Element  => {
-    const {title} = props;
+    const {title, id, onDragStart} = props;
     return (
-        <div className={taskStyles.task}>{title}</div>
+        <div draggable={true} onDragStart={(e) => onDragStart(e, id)}
+             className={taskStyles.task} id={id.toString()}>{title}</div>
     )
 }
 
