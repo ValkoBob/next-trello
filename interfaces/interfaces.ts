@@ -5,15 +5,18 @@ import { actionTypes } from '../redux/constants/actionTypes';
 export interface TaskTypes {
   id: number,
   listId: number,
-  position: number,
   title: string,
 }
 
 export interface ListTypes {
   id: number,
-  position: number,
   title: string,
-  tasks: TaskTypes []
+}
+
+export interface StateTypes {
+  lists: ListTypes[],
+  tasks: TaskTypes [],
+  update: boolean,
 }
 
 // action types
@@ -30,7 +33,7 @@ interface deleteListAction {
 
 interface moveListAction {
   type: actionTypes.MOVE_LIST,
-  payload: number
+  payload: { idFrom: number, idTo: number}
 }
 
 interface addTaskAction {

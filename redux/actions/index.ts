@@ -10,9 +10,9 @@ export const deleteList = (id: number) => ({
   payload: id,
 });
 
-export const moveList = (id: number) => ({
+export const moveList = (idFrom: number, idTo: number) => ({
   type: actionTypes.MOVE_LIST,
-  payload: id,
+  payload: { idFrom, idTo },
 });
 
 export const addTask = (listId: number, title: string) => ({
