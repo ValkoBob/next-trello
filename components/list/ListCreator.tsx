@@ -1,13 +1,14 @@
-import React from 'react';
-import styles from '../../styles/components/List.module.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addList } from '../../redux/actions/';
+import styles from '../../styles/components/List.module.scss';
+
+import { addList } from '../../redux/actions';
 
 interface ListCreatorTypes {
   addList: (title: string) => void
 }
 
+// eslint-disable-next-line no-shadow
 const ListCreator: React.FC<ListCreatorTypes> = ({ addList }): JSX.Element => {
   const [activateCreator, setCreator] = useState(false);
   const [title, setTitle] = useState('');

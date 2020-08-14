@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { addTask } from '../../redux/actions';
 import { connect } from 'react-redux';
+import { addTask } from '../../redux/actions';
 import styles from '../../styles/components/Task.module.scss';
 
 interface TaskCreatorTypes {
@@ -8,6 +8,7 @@ interface TaskCreatorTypes {
   addTask: (listId: number, title: string) => void
 }
 
+// eslint-disable-next-line no-shadow
 const TaskCreator: React.FC<TaskCreatorTypes> = ({ listId, addTask }): JSX.Element => {
   const [activateCreator, setCreator] = useState(false);
 

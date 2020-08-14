@@ -45,7 +45,7 @@ interface deleteTaskAction {
 
 interface moveTaskAction {
   type: actionTypes.MOVE_TASK,
-  payload: number
+  payload: {idFrom: number, idTo: number, targetListId: number}
 }
 
 export type Action =
