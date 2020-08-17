@@ -20,6 +20,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    border-radius: 3px;
+    color: black;
+    background-color: transparent;
+    height: 32px;
+    max-width: 300px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
   }
 
   .taskContainer {
@@ -31,9 +42,39 @@
   }
 }
 
+.listTitleInput_1 {
+  width: 100%;
+  padding-left: 5px;
+  color: black;
+  background: transparent;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listTitleInput_2 {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  cursor: default;
+  padding-left: 5px;
+  border: 1px solid #0079bf;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .listCreator {
   width: 300px;
   height: fit-content;
+  padding: 5px;
   margin: 0 8px 4px 8px;
   background-color: #d7d6d6;
   border-radius: 5px;

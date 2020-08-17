@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTask } from '../../redux/actions';
-import styles from '../../styles/components/Task.module.scss';
+import styles from './styles/Task.module.scss';
 
 interface TaskCreatorTypes {
   listId: number,
@@ -29,7 +29,7 @@ const TaskCreator: React.FC<TaskCreatorTypes> = ({ listId, addTask }): JSX.Eleme
   return (
     <>
       <div onClick={() => setCreator(!activateCreator)}
-           className={activateCreator ? styles.hide : styles.taskButton}>
+           className={activateCreator ? styles.hide : styles.taskCreatorButton}>
         <span>Add another card...</span>
       </div>
       <div className={activateCreator ? styles.taskCreator : styles.hide}>
@@ -38,7 +38,7 @@ const TaskCreator: React.FC<TaskCreatorTypes> = ({ listId, addTask }): JSX.Eleme
                     className={styles.taskName} placeholder="Enter name of the card..."/>
           <div className={styles.taskCreator_add}>
             <button onClick={handleSubmit} className={styles.taskCreator_add_submit}>Add card</button>
-            <span onClick={() => setCreator(!activateCreator)} className={styles.taskCreator_add_cancel}>x</span>
+            <span onClick={() => setCreator(!activateCreator)} className={styles.taskCreator_add_cancel}>&#10005;</span>
           </div>
         </form>
       </div>

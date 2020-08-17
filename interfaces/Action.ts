@@ -1,25 +1,7 @@
-import { actionTypes } from '../redux/constants/actionTypes';
-
-// general types
-
-export interface TaskTypes {
-  id: number,
-  listId: number,
-  title: string,
-}
-
-export interface ListTypes {
-  id: number,
-  title: string,
-}
-
-export interface StateTypes {
-  lists: ListTypes[],
-  tasks: TaskTypes [],
-  update: boolean,
-}
-
 // action types
+
+import { actionTypes } from '../redux/constants/actionTypes';
+import { TaskTypes } from './TaskTypes';
 
 interface addListAction {
   type: actionTypes.ADD_LIST,
@@ -33,7 +15,12 @@ interface deleteListAction {
 
 interface moveListAction {
   type: actionTypes.MOVE_LIST,
-  payload: { idFrom: number, idTo: number}
+  payload: { idFrom: number, idTo: number }
+}
+
+interface renameListAction {
+  type: actionTypes.RENAME_LIST,
+  payload: { id: number, newTitle: string }
 }
 
 interface addTaskAction {
@@ -48,13 +35,26 @@ interface deleteTaskAction {
 
 interface moveTaskAction {
   type: actionTypes.MOVE_TASK,
-  payload: {idFrom: number, idTo: number, targetListId: number}
+  payload: { idFrom: number, idTo: number, targetListId: number }
+}
+
+interface renameTaskAction {
+  type: actionTypes.RENAME_TASK,
+  payload: { id: number, newTitle: string }
+}
+
+interface popOverTaskAction {
+  type: actionTypes.POPOVER_TASK,
+  payload: TaskTypes
 }
 
 export type Action =
   | addListAction
   | deleteListAction
   | moveListAction
+  | renameListAction
   | addTaskAction
   | deleteTaskAction
-  | moveTaskAction;
+  | moveTaskAction
+  | renameTaskAction
+  | popOverTaskAction;

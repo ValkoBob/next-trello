@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../../styles/components/List.module.scss';
+import styles from './styles/List.module.scss';
 import ListHeader from './ListHeader';
 import Task from '../task/Task';
 import TaskCreator from '../task/TaskCreator';
-import { TaskTypes } from '../../interfaces/interfaces';
+import { TaskTypes } from '../../interfaces/TaskTypes';
 
 interface ListTypes {
   title: string;
@@ -40,7 +40,8 @@ const List: React.FC<ListTypes> = ({
       <div className={styles.taskContainer}>
         {tasks.map((task) => {
           if (task.listId === id) {
-            return <Task key={task.id} title={task.title} onDragStart={onDragStart} id={task.id}/>;
+            return <Task key={task.id} title={task.title} listId={task.listId}
+                         onDragStart={onDragStart} id={task.id}/>;
           }
           return null;
         })}

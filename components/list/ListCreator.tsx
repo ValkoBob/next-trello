@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import styles from '../../styles/components/List.module.scss';
+import styles from './styles/List.module.scss';
 
 import { addList } from '../../redux/actions';
 
@@ -41,7 +41,7 @@ const ListCreator: React.FC<ListCreatorTypes> = ({ addList }): JSX.Element => {
                  onChange={(e) => handleChange(e)} value={title}/>
           <div className={styles.listCreator_add}>
             <button onClick={handleSubmit} className={styles.listCreator_add_submit}>Add list</button>
-            <span onClick={activateListCreator} className={styles.listCreator_add_cancel}>x</span>
+            <span onClick={activateListCreator} className={styles.listCreator_add_cancel}>&#10005;</span>
           </div>
         </div>
       </form>

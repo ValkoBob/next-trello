@@ -1,5 +1,4 @@
 .task {
-  padding: 7px;
   margin: 7px;
   background-color: #fff;
   border-radius: 3px;
@@ -11,9 +10,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .taskButton {
+  width: 100%;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.taskCreatorButton {
   margin: 5px;
   padding: 10px;
   color: #172b4d;
@@ -24,7 +30,7 @@
   cursor: pointer;
 }
 
-.taskButton:hover {
+.taskCreatorButton:hover {
   background-color: #aca6a6;
 }
 
@@ -86,6 +92,7 @@
 }
 
 .taskDeleter {
+  margin-right: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,8 +103,91 @@
   cursor: pointer;
 }
 
+.taskTitleInput_1 {
+  padding: 5px;
+  width: 100%;
+  color: black;
+  background: transparent;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskTitleInput_2 {
+  padding: 5px;
+  width: 100%;
+  font-size: 18px;
+  cursor: default;
+  border: 1px solid #0079bf;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .taskDeleter:hover {
   background-color: #cd1238;
+}
+
+.taskPopOverWrapper {
+  align-items: flex-start;
+  background-color: rgba(0,0,0,.64);
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.card {
+  background-color: #f4f5f7;
+  border-radius: 2px;
+  min-height: 600px;
+  margin: 48px 0 80px;
+  overflow: hidden;
+  position: relative;
+  width: 768px;
+  z-index: 25;
+  display: block;
+}
+
+.cardClose {
+  padding: 4px;
+  margin: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 32px;
+  font-size: 25px;
+  color: #42526e;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.cardHeader {
+  margin: 12px 40px 8px 56px;
+  min-height: 32px;
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
 }
 
 .show {
