@@ -10,10 +10,11 @@ interface ListTypes {
   id: number;
   tasks: TaskTypes[];
   moveTask: (idFrom: number, idTo: number, targetListId: number) => void;
+  onDragStartList: (e: { dataTransfer: { setData: (arg0: string, arg1: string) => void } }, currentId: string) => void,
 }
 
 const List: React.FC<ListTypes> = ({
-  title, id, tasks, moveTask,
+  title, id, tasks, moveTask, onDragStartList,
 }): JSX.Element => {
   const onDragOver = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ const List: React.FC<ListTypes> = ({
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const idFrom = e.dataTransfer.getData('id');
+    console.log('Here on List!');
     const idTo = (e.target as HTMLDivElement).getAttribute('id');
     if (idFrom === idTo) {
       return;
@@ -35,7 +37,9 @@ const List: React.FC<ListTypes> = ({
   };
 
   return (
-    <div onDragOver={onDragOver} onDrop={onDrop} className={styles.list}>
+    <div draggable={true} id={id.toString()}
+         onDragStart={(e) => onDragStartList(e, id.toString())}
+         onDragOver={onDragOver} onDrop={onDrop} className={styles.list}>
       <ListHeader title={title} id={id}/>
       <div className={styles.taskContainer}>
         {tasks.map((task) => {

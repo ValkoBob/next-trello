@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles/Task.module.scss';
 import { TaskTypes } from '../../interfaces/TaskTypes';
 import TaskHeader from './TaskHeader';
+import TaskSidebar from './TaskSidebar';
 
 interface TaskPopOverTypes {
   task: TaskTypes,
@@ -13,6 +14,7 @@ const TaskPopOver: React.FC<TaskPopOverTypes> = ({ task, popOverTask }): JSX.Ele
       <div className={styles.card}>
         <div onClick={() => popOverTask(task)} className={styles.cardClose}>&#10005;</div>
         <TaskHeader task={task}/>
+        <TaskSidebar/>
       </div>
     </div>
 );

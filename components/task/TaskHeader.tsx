@@ -10,7 +10,7 @@ interface TaskHeaderTypes {
   renameTask: (id: number, newTitle: string) => void,
 }
 
-const TaskHeader: React.FC<TaskHeaderTypes> = ({ task }) => {
+const TaskHeader: React.FC<TaskHeaderTypes> = ({ task, renameTask }) => {
   const [style, setStyle] = useState(styles.taskTitleInput_1);
   const editTitle = (newTitle: string) => {
     renameTask(task.id, newTitle);

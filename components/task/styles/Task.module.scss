@@ -190,6 +190,125 @@
   background: transparent;
 }
 
+.cardSidebar {
+  color: #172b4d;
+  float: right;
+  padding: 0 16px 8px 8px;
+  width: 168px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.cardSidebar_item {
+  color: #172b4d;
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  margin-top: 8px;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.taskLabels {
+  padding: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 8px 16px -4px rgba(9,30,66,.25),0 0 0 1px rgba(9,30,66,.08);
+  overflow: hidden;
+  position: absolute;
+  right: -9999px;
+  width: 204px;
+  z-index: 70;
+  display: block;
+  left: 563px;
+  top: 94.6px;
+}
+
+.taskLabelsHeader {
+  padding:  5px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  height: 40px;
+  position: relative;
+  margin-bottom: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.taskLabelsHeader>span {
+  width: 100%;
+}
+
+.taskLabelsClose {
+  cursor: pointer;
+}
+
+.taskLabelsList {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.taskLabelsList_item {
+  font-size: 14px;
+  line-height: 20px;
+  list-style: none;
+  color: #fff;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  background-color: #61bd4f;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  transition: padding 85ms,margin 85ms,box-shadow 85ms;
+  box-shadow: -8px 0 #519839;
+  margin: 0 0 4px 4px;
+}
+
+.labelColor {
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  float: left;
+  height: 32px;
+  margin: 0 8px 8px 0;
+  padding: 0;
+  width: 48px;
+  cursor: pointer;
+}
+
 .show {
   display: block;
 }

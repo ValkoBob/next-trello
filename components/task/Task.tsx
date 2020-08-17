@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styles from './styles/Task.module.scss';
-import { deleteTask, renameTask, popOverTask } from '../../redux/actions';
+import { deleteTask, popOverTask } from '../../redux/actions';
 
 interface TaskTypes {
   title: string,
@@ -16,7 +16,7 @@ interface TaskTypes {
 const Task: React.FC<TaskTypes> = ({
   title, id, listId, onDragStart, deleteTask, popOverTask,
 }): JSX.Element => (
-    <div draggable={true}
+    <div draggable={false}
          onDragStart={(e) => onDragStart(e, id.toString())}
          className={styles.task} id={id.toString()}>
       <div className={styles.taskButton} onClick={() => popOverTask({ id, listId, title })}>
@@ -26,4 +26,4 @@ const Task: React.FC<TaskTypes> = ({
     </div>
 );
 
-export default connect(null, { deleteTask, renameTask, popOverTask })(Task);
+export default connect(null, { deleteTask, popOverTask })(Task);
