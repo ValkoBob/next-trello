@@ -1,5 +1,4 @@
 import { actionTypes } from '../constants/actionTypes';
-import { TaskTypes } from '../../interfaces/TaskTypes';
 
 export const addList = (title: string) => ({
   type: actionTypes.ADD_LIST,
@@ -41,7 +40,22 @@ export const renameTask = (id: number, newTitle: string) => ({
   payload: { id, newTitle },
 });
 
-export const popOverTask = (data?: TaskTypes) => ({
+export const popOverTask = (id: number) => ({
   type: actionTypes.POPOVER_TASK,
-  payload: data,
+  payload: id,
+});
+
+export const addLabelTask = (taskId: number, title: string, backgroundColor: string) => ({
+  type: actionTypes.ADD_LABEL_TASK,
+  payload: { taskId, title, backgroundColor },
+});
+
+export const deleteLabelTask = (id: number) => ({
+  type: actionTypes.DELETE_LABEL_TASK,
+  payload: id,
+});
+
+export const editDescription = (id: number, description: string) => ({
+  type: actionTypes.EDIT_DESCRIPTION,
+  payload: { id, description },
 });

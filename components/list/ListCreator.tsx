@@ -8,7 +8,6 @@ interface ListCreatorTypes {
   addList: (title: string) => void
 }
 
-// eslint-disable-next-line no-shadow
 const ListCreator: React.FC<ListCreatorTypes> = ({ addList }): JSX.Element => {
   const [activateCreator, setCreator] = useState(false);
   const [title, setTitle] = useState('');

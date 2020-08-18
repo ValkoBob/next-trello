@@ -13,6 +13,40 @@
   align-items: center;
 }
 
+.taskMiniLabels {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  user-select: none;
+  white-space: normal;
+  color: #172b4d;
+  cursor: pointer;
+  overflow: auto;
+  position: relative;
+}
+
+.taskMiniLabels_item {
+  cursor: default;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+  font-size: 12px;
+  font-weight: 700;
+  height: 8px;
+  line-height: 100px;
+  margin: 0 4px 4px 0;
+  max-width: 40px;
+  min-width: 40px;
+  padding: 0;
+  text-shadow: none;
+  width: auto;
+}
+
 .taskButton {
   width: 100%;
   padding: 7px;
@@ -231,11 +265,11 @@
   overflow: hidden;
   position: absolute;
   right: -9999px;
-  width: 204px;
+  width: 250px;
   z-index: 70;
   display: block;
-  left: 563px;
-  top: 94.6px;
+  left: 503px;
+  top: 113.6px;
 }
 
 .taskLabelsHeader {
@@ -291,6 +325,28 @@
   margin: 0 0 4px 4px;
 }
 
+.taskLabelsForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelName {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #fafbfc;
+  border: none;
+  box-shadow: inset 0 0 0 2px #dfe1e6;
+  color: #172b4d;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: block;
+  line-height: 20px;
+  padding: 8px 12px;
+  margin: 4px 0 12px;
+  width: 100%;
+}
+
 .labelColor {
   border-radius: 4px;
   color: #fff;
@@ -307,6 +363,231 @@
   padding: 0;
   width: 48px;
   cursor: pointer;
+}
+
+.labelColorChoice {
+  white-space: nowrap;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: bottom;
+  height: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  width: 20px;
+  left: 14px;
+  position: absolute;
+  top: 6px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.taskLabelButtonCreate {
+  width: 120px;
+  font: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 8px 4px 0 0;
+  text-align: center;
+  padding: 6px 24px;
+  background-color: #5aac44;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+}
+
+.taskContent {
+  color: #172b4d;
+  float: left;
+  margin-left: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 24px;
+  padding: 0 8px 8px 16px;
+  position: relative;
+  width: 552px;
+  z-index: 0;
+}
+
+.taskContentLabels {
+  color: #172b4d;
+  line-height: 20px;
+  font-weight: 400;
+  display: block;
+  float: left;
+  margin: 0 8px 8px 0;
+  max-width: 100%;
+}
+
+.taskContentLabels_header {
+  color: #5e6c84;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  display: block;
+  line-height: 20px;
+  margin: 0 8px 4px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.taskContentLabels_item {
+  font-size: 14px;
+  color: #fff;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #f2d600;
+  cursor: pointer;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  font-weight: 600;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 4px 4px 0;
+  min-width: 40px;
+  padding: 0 12px;
+  width: auto;
+}
+
+.taskDescription {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  clear: both;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.taskDescriptionHeader {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 8px 0;
+  position: relative;
+  margin: 0;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.taskDescriptionAdd {
+  margin-left: 10px;
+  color: #172b4d;
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  border-radius: 3px;
+  display: block;
+  cursor: pointer;
+  min-height: 40px;
+  padding: 8px 12px 24px;
+  text-decoration: none;
+}
+
+.taskDescriptionAdd:hover {
+  background-color: rgb(213, 213, 226);
+}
+
+.taskDescriptionEditor {
+  margin-left: 10px;
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: auto;
+  position: relative;
+  display: block;
+  float: left;
+  padding-bottom: 9px;
+  z-index: 50;
+  width: 100%;
+}
+
+.taskDescriptionInput {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #172b4d;
+  box-sizing: border-box;
+  border-radius: 3px;
+  line-height: 20px;
+  padding: 8px 12px;
+  width: 100%;
+  border: none rgba(9, 30, 66, .13);
+  margin: 0 0 4px;
+  display: block;
+  min-height: 108px;
+  background: #fff;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: none;
+  box-shadow: inset 0 0 0 2px #0079bf;
+  height: 108px;
+}
+
+.taskDescriptionButtons {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: auto;
+  clear: both;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.taskDescriptionButtons_create {
+  width: 100px;
+  font: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 6px 12px;
+  text-align: center;
+  float: left;
+  margin: 0 4px 0 0;
+  background-color: #5aac44;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+}
+
+.taskDescriptionButtons_close {
+  background-color: transparent;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: bottom;
+  cursor: pointer;
+  font-size: 24px;
+  height: 32px;
+  line-height: 32px;
+  width: 32px;
+  color: #42526e;
 }
 
 .show {

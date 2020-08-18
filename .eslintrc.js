@@ -32,6 +32,8 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-param-reassign': 0,
+    'no-shadow': 'off',
     'no-unused-vars': 'off',
     'react/prop-types': 0,
     'max-len': 0,

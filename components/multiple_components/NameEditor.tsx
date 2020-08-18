@@ -48,25 +48,20 @@ const NameEditor: React.FC<ListNameEditorTypes> = ({
   };
 
   return (
-      <form onKeyDown={
-        (e) => {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            handleSubmit(e);
-          }
-        }
+    <form onKeyDown={(e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSubmit(e);
       }
-            onSubmit={
-              (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handleSubmit(e);
-              }
-            }>
-        <input type="text" value={text} readOnly={isDisabled}
-               className={style}
-               onClick={handleClick} onChange={handleChange} onBlur={handleSubmit}/>
-      </form>
+    }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleSubmit(e);
+          }}>
+      <input type="text" value={text} readOnly={isDisabled} className={style}
+             onClick={handleClick} onChange={handleChange} onBlur={handleSubmit}/>
+    </form>
   );
 };
 

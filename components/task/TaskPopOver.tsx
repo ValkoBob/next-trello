@@ -1,20 +1,21 @@
 import React from 'react';
 import styles from './styles/Task.module.scss';
-import { TaskTypes } from '../../interfaces/TaskTypes';
 import TaskHeader from './TaskHeader';
 import TaskSidebar from './TaskSidebar';
+import TaskContent from './TaskContent';
 
 interface TaskPopOverTypes {
-  task: TaskTypes,
-  popOverTask: (obj: { listId: number; id: number; title: string }) => void,
+  taskId: number,
+  popOverTask: (id: number) => void,
 }
 
-const TaskPopOver: React.FC<TaskPopOverTypes> = ({ task, popOverTask }): JSX.Element => (
+const TaskPopOver: React.FC<TaskPopOverTypes> = ({ taskId, popOverTask }): JSX.Element => (
     <div className={styles.taskPopOverWrapper}>
       <div className={styles.card}>
-        <div onClick={() => popOverTask(task)} className={styles.cardClose}>&#10005;</div>
-        <TaskHeader task={task}/>
-        <TaskSidebar/>
+        <div onClick={() => popOverTask(taskId)} className={styles.cardClose}>&#10005;</div>
+        <TaskHeader taskId={taskId}/>
+        <TaskContent currentTaskId={taskId}/>
+        <TaskSidebar taskId={taskId}/>
       </div>
     </div>
 );

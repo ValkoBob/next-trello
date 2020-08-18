@@ -11,7 +11,6 @@ interface ListHeaderTypes {
   renameList: (id: number, newTitle: string) => void
 }
 
-// eslint-disable-next-line no-shadow
 const ListHeader: React.FC<ListHeaderTypes> = ({
   title, id, deleteList, renameList,
 }): JSX.Element => {

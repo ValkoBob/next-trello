@@ -45,7 +45,22 @@ interface renameTaskAction {
 
 interface popOverTaskAction {
   type: actionTypes.POPOVER_TASK,
-  payload: TaskTypes
+  payload: number
+}
+
+interface addLabelTaskAction {
+  type: actionTypes.ADD_LABEL_TASK,
+  payload: { taskId: number, title: string, backgroundColor: string}
+}
+
+interface deleteLabelTaskAction {
+  type: actionTypes.DELETE_LABEL_TASK,
+  payload: number,
+}
+
+interface editDescription {
+  type: actionTypes.EDIT_DESCRIPTION,
+  payload: {id: number, description: string}
 }
 
 export type Action =
@@ -57,4 +72,7 @@ export type Action =
   | deleteTaskAction
   | moveTaskAction
   | renameTaskAction
-  | popOverTaskAction;
+  | popOverTaskAction
+  | addLabelTaskAction
+  | deleteLabelTaskAction
+  | editDescription;

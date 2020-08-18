@@ -1,40 +1,27 @@
 import { actionTypes } from '../constants/actionTypes';
 import { StateTypes } from '../../interfaces/StateTypes';
 import { TaskTypes } from '../../interfaces/TaskTypes';
-import { ListTypes } from '../../interfaces/ListTypes';
 import { Action } from '../../interfaces/Action';
 
 const INITIAL_STATE: StateTypes = {
   lists: [],
   tasks: [],
   update: false,
-  data: {
-    id: 0,
-    title: '',
-    listId: 0,
-  },
+  data: 0,
   isPopOverTask: false,
+  labels: [],
 };
 
 const moveTasks = (arr: TaskTypes[], idFrom: number, idTo: number,
   targetListId: number) => {
   const idToIndex = arr.findIndex((item) => item.id === idTo);
   const idFromIndex = arr.findIndex((item) => item.id === idFrom);
-  // eslint-disable-next-line no-param-reassign
   arr[idFromIndex].listId = targetListId;
   arr.splice(idToIndex, 0, arr.splice(idFromIndex, 1)[0]);
   return arr;
 };
 
-const moveLists = (arr: ListTypes[], idFrom: number, idTo: number) => {
-  const idToIndex = arr.findIndex((item) => item.id === idTo);
-  const idFromIndex = arr.findIndex((item) => item.id === idFrom);
-  arr.splice(idToIndex, 0, arr.splice(idFromIndex, 1)[0]);
-  return arr;
-};
-
 export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
-  console.log(action.payload);
   switch (action.type) {
     case actionTypes.ADD_LIST:
       return {
@@ -52,12 +39,8 @@ export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
       };
 
     case actionTypes.MOVE_LIST:
-      // eslint-disable-next-line no-case-declarations
-      const updatedLists = moveLists(state.lists, action.payload.idFrom, action.payload.idTo);
       return {
         ...state,
-        lists: updatedLists,
-        update: !state.update,
       };
 
     case actionTypes.RENAME_LIST:
@@ -65,7 +48,6 @@ export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
         ...state,
         lists: state.lists.map((list) => {
           if (list.id === action.payload.id) {
-            // eslint-disable-next-line no-param-reassign
             list.title = action.payload.newTitle;
           }
           return list;
@@ -81,6 +63,7 @@ export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
             id: Date.now(),
             listId: action.payload.listId,
             title: action.payload.title,
+            description: '',
           },
         ],
       };
@@ -92,12 +75,10 @@ export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
       };
 
     case actionTypes.MOVE_TASK:
-      // eslint-disable-next-line no-case-declarations
-      const updatedTasks = moveTasks(state.tasks, action.payload.idFrom,
-        action.payload.idTo, action.payload.targetListId);
       return {
         ...state,
-        tasks: updatedTasks,
+        tasks: moveTasks(state.tasks, action.payload.idFrom,
+          action.payload.idTo, action.payload.targetListId),
         update: !state.update,
       };
 
@@ -106,7 +87,6 @@ export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
         ...state,
         tasks: state.tasks.map((task) => {
           if (task.id === action.payload.id) {
-            // eslint-disable-next-line no-param-reassign
             task.title = action.payload.newTitle;
           }
           return task;
@@ -119,6 +99,36 @@ export const board = (state = INITIAL_STATE, action: Action): StateTypes => {
         data: action.payload,
         isPopOverTask: !state.isPopOverTask,
       };
+
+    case actionTypes.ADD_LABEL_TASK:
+      return {
+        ...state,
+        labels: [...state.labels, {
+          id: Date.now(),
+          taskId: action.payload.taskId,
+          title: action.payload.title,
+          backgroundColor: action.payload.backgroundColor,
+        }],
+      };
+
+    case actionTypes.DELETE_LABEL_TASK: {
+      return {
+        ...state,
+        labels: state.labels.filter((label) => label.id !== action.payload),
+      };
+    }
+
+    case actionTypes.EDIT_DESCRIPTION: {
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id === action.payload.id) {
+            task.description = action.payload.description;
+          }
+          return task;
+        }),
+      };
+    }
 
     default:
       return state;

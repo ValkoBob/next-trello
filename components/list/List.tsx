@@ -10,13 +10,11 @@ interface ListTypes {
   id: number;
   tasks: TaskTypes[];
   moveTask: (idFrom: number, idTo: number, targetListId: number) => void;
-  onDragStartList: (e: { dataTransfer: { setData: (arg0: string, arg1: string) => void } }, currentId: string) => void,
 }
 
-const List: React.FC<ListTypes> = ({
-  title, id, tasks, moveTask, onDragStartList,
-}): JSX.Element => {
-  const onDragOver = (e: { preventDefault: () => void }) => {
+const List: React.FC<ListTypes> = ({ title, id, tasks, moveTask, }): JSX.Element => {
+  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     e.preventDefault();
   };
 
@@ -26,9 +24,9 @@ const List: React.FC<ListTypes> = ({
   };
 
   const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     e.preventDefault();
     const idFrom = e.dataTransfer.getData('id');
-    console.log('Here on List!');
     const idTo = (e.target as HTMLDivElement).getAttribute('id');
     if (idFrom === idTo) {
       return;
@@ -37,15 +35,13 @@ const List: React.FC<ListTypes> = ({
   };
 
   return (
-    <div draggable={true} id={id.toString()}
-         onDragStart={(e) => onDragStartList(e, id.toString())}
-         onDragOver={onDragOver} onDrop={onDrop} className={styles.list}>
+    <div onDragOver={onDragOver} onDrop={onDrop} className={styles.list}>
       <ListHeader title={title} id={id}/>
       <div className={styles.taskContainer}>
         {tasks.map((task) => {
           if (task.listId === id) {
-            return <Task key={task.id} title={task.title} listId={task.listId}
-                         onDragStart={onDragStart} id={task.id}/>;
+            return <Task key={task.id} task={task}
+                         onDragStart={onDragStart}/>;
           }
           return null;
         })}
