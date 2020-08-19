@@ -1,0 +1,35 @@
+.cardHeader {
+  margin: 12px 40px 8px 56px;
+  min-height: 32px;
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+}
+
+.taskTitleInput_1 {
+  padding: 5px;
+  width: 100%;
+  color: black;
+  background: transparent;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskTitleInput_2 {
+  padding: 5px;
+  width: 100%;
+  font-size: 18px;
+  cursor: default;
+  border: 1px solid #0079bf;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

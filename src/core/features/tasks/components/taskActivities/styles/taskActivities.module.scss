@@ -1,0 +1,118 @@
+.taskActivities {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  clear: both;
+  margin-bottom: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.newComment {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  position: relative;
+  margin: 0 0 8px 40px;
+}
+
+.newCommentFrame {
+  padding: 8px 12px;
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px -1px rgba(9,30,66,.25),0 0 0 1px rgba(9,30,66,.08);
+  margin: 4px 4px 12px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.newCommentCreator {
+  padding: 8px 12px;
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px -1px rgba(9,30,66,.25),0 0 0 1px rgba(9,30,66,.08);
+  margin: 4px 4px 12px 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  form {
+    textarea {}
+  }
+}
+
+.newCommentCreator>form>textarea {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #172b4d;
+  border-radius: 3px;
+  display: block;
+  line-height: 20px;
+  background: #fff;
+  box-sizing: content-box;
+  margin: 0;
+  min-height: 20px;
+  padding: 4px;
+  width: 100%;
+  resize: none;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  height: 20px;
+}
+
+.newCommentCreator>form>button {
+  color: #172b4d;
+  width: 100px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  opacity: 1;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 8px 4px 0 0;
+  padding: 6px 12px;
+  text-align: center;
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  cursor: not-allowed;
+}
+
+.comment {
+  margin: 5px 5px 5px 40px;
+  padding: 5px;
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px -1px rgba(9,30,66,.25),0 0 0 1px rgba(9,30,66,.08);
+  box-sizing: border-box;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  cursor: pointer;
+}

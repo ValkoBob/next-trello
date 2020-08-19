@@ -1,0 +1,152 @@
+.taskDescription {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  clear: both;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.taskDescriptionHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.taskDescriptionHeaderTitle {
+  padding: 8px 0;
+  position: relative;
+  margin: 0;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.taskDescriptionHeaderEdit {
+  width: 80px;
+  height: 32px;
+  font-size: 14px;
+  color: #172b4d;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  margin: 0 0 0 8px;
+}
+
+.taskDescriptionHeaderEdit:hover {
+  background-color: rgb(213, 213, 226);
+}
+
+.taskDescriptionAdd {
+  margin-left: 10px;
+  color: #172b4d;
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  border-radius: 3px;
+  display: block;
+  cursor: pointer;
+  min-height: 40px;
+  padding: 8px 12px 24px;
+  text-decoration: none;
+}
+
+.taskDescriptionAdd:hover {
+  background-color: rgb(213, 213, 226);
+}
+
+.taskDescriptionEditor {
+  margin-left: 10px;
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: auto;
+  position: relative;
+  display: block;
+  float: left;
+  padding-bottom: 9px;
+  z-index: 50;
+  width: 100%;
+}
+
+.taskDescriptionInput {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: #172b4d;
+  box-sizing: border-box;
+  border-radius: 3px;
+  line-height: 20px;
+  padding: 8px 12px;
+  width: 100%;
+  border: none rgba(9, 30, 66, .13);
+  margin: 0 0 4px;
+  display: block;
+  min-height: 108px;
+  background: #fff;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  resize: none;
+  box-shadow: inset 0 0 0 2px #0079bf;
+  height: 108px;
+}
+
+.taskDescriptionButtons {
+  color: #172b4d;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: auto;
+  clear: both;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.taskDescriptionButtons_create {
+  width: 100px;
+  font: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 6px 12px;
+  text-align: center;
+  float: left;
+  margin: 0 4px 0 0;
+  background-color: #5aac44;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+}
+
+.taskDescriptionButtons_close {
+  background-color: transparent;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: bottom;
+  cursor: pointer;
+  font-size: 24px;
+  height: 32px;
+  line-height: 32px;
+  width: 32px;
+  color: #42526e;
+}

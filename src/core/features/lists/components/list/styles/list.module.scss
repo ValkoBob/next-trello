@@ -1,0 +1,25 @@
+.list {
+  width: 300px;
+  height: 100%;
+  margin: 0 8px 4px 8px;
+  background-color: lightgrey;
+  border-radius: 5px;
+  box-sizing: border-box;
+  vertical-align: top;
+
+  .taskContainer {
+    max-height: 65vh;
+    margin: 0 8px 4px 8px;
+    background-color: #aca6a6;
+    border-radius: 5px;
+    overflow-y: auto;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,29 @@
+.cardSidebar {
+  color: #172b4d;
+  float: right;
+  padding: 0 16px 8px 8px;
+  width: 168px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.cardSidebar_item {
+  color: #172b4d;
+  background-color: rgba(9,30,66,.04);
+  box-shadow: none;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  margin-top: 8px;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+}

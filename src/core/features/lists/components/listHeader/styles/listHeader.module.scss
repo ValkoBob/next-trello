@@ -1,0 +1,78 @@
+.listHeader {
+  padding: 10px 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listTitle {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 3px;
+  color: black;
+  background-color: transparent;
+  height: 32px;
+  max-width: 300px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.listTitleInput_1 {
+  width: 100%;
+  padding-left: 5px;
+  color: black;
+  background: transparent;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.disabled {
+
+  }
+}
+
+.listTitleInput_2 {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  cursor: default;
+  padding-left: 5px;
+  border: 1px solid #0079bf;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listDeleter {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.listDeleter:hover {
+  background-color: #cd1238;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

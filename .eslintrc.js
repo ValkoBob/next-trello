@@ -32,6 +32,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'object-curly-newline': ['error', { multiline: true, minProperties: 4 }],
     'no-param-reassign': 0,
     'no-shadow': 'off',
     'no-unused-vars': 'off',

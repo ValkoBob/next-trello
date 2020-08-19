@@ -7,7 +7,7 @@ interface ListNameEditorTypes {
   editClass: (isDisabled: boolean) => void,
 }
 
-const NameEditor: React.FC<ListNameEditorTypes> = ({
+export const NameEditor: React.FC<ListNameEditorTypes> = ({
   title, style, editTitle, editClass,
 }): JSX.Element => {
   const [text, setText] = useState<string>(title);
@@ -31,14 +31,10 @@ const NameEditor: React.FC<ListNameEditorTypes> = ({
   const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>
     | React.FocusEvent<HTMLInputElement> | React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (text.length > 0) {
-      editTitle(text);
-    } else {
-      setText(title);
-    }
+    if (text.length > 0) editTitle(text); else setText(title);
     if (isSelected) {
       const selection: Selection | null = window.getSelection();
-      if (selection != null) {
+      if (selection) {
         selection.removeAllRanges();
       }
       setIsSelected(false);
@@ -64,5 +60,3 @@ const NameEditor: React.FC<ListNameEditorTypes> = ({
     </form>
   );
 };
-
-export default NameEditor;

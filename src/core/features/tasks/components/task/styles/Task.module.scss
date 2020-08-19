@@ -1,0 +1,115 @@
+.task {
+  margin: 7px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.taskMiniLabels {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  user-select: none;
+  white-space: normal;
+  color: #172b4d;
+  cursor: pointer;
+  overflow: auto;
+  position: relative;
+}
+
+.taskMiniLabels_item {
+  cursor: default;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+  font-size: 12px;
+  font-weight: 700;
+  height: 8px;
+  line-height: 100px;
+  margin: 0 4px 4px 0;
+  max-width: 40px;
+  min-width: 40px;
+  padding: 0;
+  text-shadow: none;
+  width: auto;
+}
+
+.taskBadges {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  user-select: none;
+  white-space: normal;
+  color: #172b4d;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.taskButton {
+  width: 100%;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.taskDeleter {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.taskTitleInput_1 {
+  padding: 5px;
+  width: 100%;
+  color: black;
+  background: transparent;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskTitleInput_2 {
+  padding: 5px;
+  width: 100%;
+  font-size: 18px;
+  cursor: default;
+  border: 1px solid #0079bf;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskDeleter:hover {
+  background-color: #cd1238;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
