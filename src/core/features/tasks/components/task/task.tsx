@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/Task.module.scss';
+import styles from './styles/task.module.scss';
 import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
 
 interface TaskComponentTypes {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styles from './styles/TaskSidebar.module.scss';
-import TaskLabelsCreator from './TaskLabelsCreator';
+import styles from './styles/taskSidebar.module.scss';
+import TaskLabelsCreator from '../taskLabelsCreator';
 
 interface TaskSidebarTypes {
   taskId: number

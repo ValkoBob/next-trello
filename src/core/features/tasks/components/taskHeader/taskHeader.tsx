@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { renameTask } from '../../src/redux/actions';
-import { NameEditor } from '../multiple_components/NameEditor';
-import styles from './styles/TaskHeader.module.scss';
-import { ListTypes } from '../../src/core/shared/interfaces/ListTypes';
-import { TaskTypes } from '../../src/core/shared/interfaces/TaskTypes';
+import { NameEditor } from '../../../../shared/sharedComponent/nameEditor';
+import styles from './styles/taskHeader.module.scss';
+import { ListTypes } from '../../../../shared/interfaces/ListTypes';
+import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
 
 interface TaskHeaderTypes {
   tasks: TaskTypes[],
@@ -50,7 +48,4 @@ const TaskHeader: React.FC<TaskHeaderTypes> = ({
   );
 };
 
-const mapStateToProps = ({ board: { lists, tasks } }:
-                           { board: { lists: ListTypes[], tasks: TaskTypes[]} }) => ({ lists, tasks });
-
-export default connect(mapStateToProps, { renameTask })(TaskHeader);
+export default TaskHeader;

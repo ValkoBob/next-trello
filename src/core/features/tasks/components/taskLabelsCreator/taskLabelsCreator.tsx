@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import styles from './styles/TaskLabelsCreator.module.scss';
-import { stylesArray } from './TaskStylesLabels';
-import { addLabelTask } from '../../src/redux/actions';
-import { TaskTypes } from '../../src/core/shared/interfaces/TaskTypes';
+import styles from './styles/taskLabelsCreator.module.scss';
+import { stylesArray } from '../../../../api/taskStylesLabels';
+import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
 
 interface TaskLabelsTypes {
   taskId: number,
@@ -56,6 +54,4 @@ const TaskLabelsCreator: React.FC<TaskLabelsTypes> = ({
   );
 };
 
-const mapStateToProps = ({ board: { tasks } }: { board: { tasks: TaskTypes[]} }) => ({ tasks });
-
-export default connect(mapStateToProps, { addLabelTask })(TaskLabelsCreator);
+export default TaskLabelsCreator;

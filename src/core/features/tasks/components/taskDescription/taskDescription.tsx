@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import styles from './styles/TaskDescription.module.scss';
-import { TaskTypes } from '../../src/core/shared/interfaces/TaskTypes';
-import { editDescription } from '../../src/redux/actions';
+import styles from './styles/taskDescription.module.scss';
+import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
 
 interface TaskDescriptionTypes {
   taskId: number,
@@ -11,9 +9,9 @@ interface TaskDescriptionTypes {
 }
 
 const TaskDescription: React.FC<TaskDescriptionTypes> = ({
-                                                           tasks,
-                                                           taskId, editDescription,
-                                                         }): JSX.Element => {
+  tasks,
+  taskId, editDescription,
+}): JSX.Element => {
   const [activateCreator, setActivate] = useState(true);
   const neededTask = tasks.find((task) => task.id === taskId);
 
@@ -61,6 +59,4 @@ const TaskDescription: React.FC<TaskDescriptionTypes> = ({
   );
 };
 
-const mapStateToProps = ({ board: { tasks } }: { board: { tasks: TaskTypes[] } }) => ({ tasks });
-
-export default connect(mapStateToProps, { editDescription })(TaskDescription);
+export default TaskDescription;

@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './styles/TaskPopOver.module.scss';
-import TaskHeader from './TaskHeader';
-import TaskSidebar from './TaskSidebar';
-import TaskContent from './TaskContent';
+import styles from './styles/taskPopOver.module.scss';
+import TaskHeader from '../taskHeader';
+import TaskSidebar from '../taskSidebar';
+import TaskContent from '../taskContent';
 
 interface TaskPopOverTypes {
   taskId: number,

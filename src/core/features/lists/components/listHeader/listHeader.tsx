@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles/listHeader.module.scss';
-import { NameEditor } from '../../../../../../components/multiple_components/NameEditor';
+import { NameEditor } from '../../../../shared/sharedComponent/nameEditor';
 
 interface ListHeaderTypes {
   title: string,

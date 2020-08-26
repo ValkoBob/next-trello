@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles/list.module.scss';
-import ListHeader from '../listHeader/listHeader';
-import Task from '../../../tasks/components/task/task';
-import TaskCreator from '../../../tasks/components/taskCreator/taskCreator';
+import ListHeader from '../listHeader';
+import Task from '../../../tasks/components/task';
+import TaskCreator from '../../../tasks/components/taskCreator';
 import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
 
 interface ListTypes {
@@ -42,13 +42,6 @@ const List: React.FC<ListTypes> = ({
       <div className={styles.taskContainer}>
         {tasks.filter((task) => task.listId === id).map((task) => <Task key={task.id} task={task}
                                                                     onDragStart={onDragStart}/>)}
-        {tasks.map((task) => {
-          if (task.listId === id) {
-            return <Task key={task.id} task={task}
-                         onDragStart={onDragStart}/>;
-          }
-          return null;
-        })}
       </div>
       <TaskCreator listId={id}/>
     </div>

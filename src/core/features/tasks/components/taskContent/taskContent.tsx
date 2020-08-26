@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import styles from './styles/TaskContent.module.scss';
-import { deleteLabelTask } from '../../src/redux/actions';
-import TaskDescription from './TaskDescription';
-import { TaskTypes } from '../../src/core/shared/interfaces/TaskTypes';
-import TaskActivities from '../../src/core/features/tasks/components/taskActivities/taskActivities';
+import styles from './styles/taskContent.module.scss';
+import TaskDescription from '../taskDescription';
+import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
+import TaskActivities from '../taskActivities';
 
 interface TaskContentTypes {
   tasks: TaskTypes[]
@@ -35,6 +33,4 @@ const TaskContent: React.FC<TaskContentTypes> = ({ tasks, currentTaskId, deleteL
   );
 };
 
-const mapStateToProps = ({ board: { tasks } }: { board: { tasks: TaskTypes[] } }) => ({ tasks });
-
-export default connect(mapStateToProps, { deleteLabelTask })(TaskContent);
+export default TaskContent;

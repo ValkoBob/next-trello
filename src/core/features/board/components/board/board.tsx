@@ -4,7 +4,7 @@ import { TaskTypes } from '../../../../shared/interfaces/TaskTypes';
 import styles from './styles/board.module.scss';
 import List from '../../../lists/components/list/list';
 import ListCreator from '../../../lists/components/listCreator';
-import TaskPopOver from '../../../../../../components/popover_task/TaskPopOver';
+import TaskPopOver from '../../../tasks/components/taskPopOver';
 
 interface BoardTypes {
   lists: ListTypes[], tasks: TaskTypes[], update: boolean,

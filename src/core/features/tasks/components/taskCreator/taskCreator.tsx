@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './styles/TaskCreator.module.scss';
+import styles from './styles/taskCreator.module.scss';
 
 interface TaskCreatorTypes {
   listId: number,
